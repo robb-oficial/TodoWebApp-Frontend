@@ -1,0 +1,29 @@
+<form [formGroup]="form" class="form" (ngSubmit)="onSubmit()" enctype="multipart/form-data">
+    <h2 class="form__h2">Sign Up</h2>
+
+    <mat-form-field class="form-control">
+        <mat-label>Username</mat-label>
+        <input matInput type="text" placeholder="john123" formControlName="username">
+    </mat-form-field>
+    <mat-form-field class="form-control">
+        <mat-label>Email</mat-label>
+        <input matInput type="email" placeholder="john123@gmail.com" formControlName="email">
+    </mat-form-field>
+    <mat-form-field class="form-control">
+        <mat-label>Password</mat-label>
+        <input matInput type="password" formControlName="password">
+    </mat-form-field>
+    <mat-form-field class="form-control">
+        <mat-label>Confirm Password</mat-label>
+        <input matInput type="password" formControlName="passwordConfirm">
+    </mat-form-field>
+    <div class="form-control">
+        <label for="profile-pic" class="file-label">Profile picture (optional)</label>
+        <input id="profile-pic" type="file" #fileInput>
+    </div>
+
+    <button matButton="elevated" type="submit" class="btn">Submit</button>
+    @if (errorMessage(); as err) {
+    <p class="error-message">{{err}}</p>
+    }
+</form>

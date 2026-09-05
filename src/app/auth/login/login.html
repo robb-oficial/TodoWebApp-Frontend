@@ -1,0 +1,17 @@
+<form [formGroup]="loginForm" class="form" (ngSubmit)="onSubmit()">
+    <h2 class="form__h2">Login</h2>
+
+    <mat-form-field class="form-control">
+        <mat-label>Email</mat-label>
+        <input matInput type="email" placeholder="john123@gmail.com" formControlName="email">
+    </mat-form-field>
+    <mat-form-field class="form-control">
+        <mat-label>Password</mat-label>
+        <input matInput type="password" formControlName="password">
+    </mat-form-field>
+
+    <button matButton="elevated" type="submit" class="btn">Submit</button>
+    @if (errorMessage(); as err) {
+    <p class="error-message">{{err}}</p>
+    }
+</form>

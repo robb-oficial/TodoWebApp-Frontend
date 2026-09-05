@@ -1,0 +1,34 @@
+<mat-sidenav-container class="sidenav-container">
+    <mat-sidenav #sdNav mode="over" autoFocus="false" fixedInViewport>
+        <ul>
+            <li routerLink="login"><a mat-button>Login</a></li>
+            <li routerLink="signup"><a mat-button>Signup</a></li>
+            <li><a mat-button>Logout</a></li>
+            <li><a mat-button>Home</a></li>
+            <li><a mat-button>Dashboard</a></li>
+            <li><a mat-button>About</a></li>
+        </ul>
+    </mat-sidenav>
+    <mat-sidenav-content>
+        <mat-toolbar class="navbar">
+            <span>Robb's Todos</span>
+            <span class="example-spacer"></span>
+            @if (!smallScreen()) {
+            <ul class="links">
+                <li routerLink="login"><a mat-button>Login</a></li>
+                <li routerLink="signup"><a mat-button>Signup</a></li>
+                <li><a mat-button>Logout</a></li>
+                <li><a mat-button>Home</a></li>
+                <li><a mat-button>Dashboard</a></li>
+                <li><a mat-button>About</a></li>
+            </ul>
+            }
+            @if (smallScreen()) {
+            <button matMiniFab (click)="sdNav.toggle()">
+                <mat-icon>menu</mat-icon>
+            </button>
+            }
+        </mat-toolbar>
+        <ng-content></ng-content>
+    </mat-sidenav-content>
+</mat-sidenav-container>
