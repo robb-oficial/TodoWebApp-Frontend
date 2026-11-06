@@ -1,26 +1,34 @@
 <mat-sidenav-container class="sidenav-container">
     <mat-sidenav #sdNav mode="over" autoFocus="false" fixedInViewport>
         <ul>
+            @if (authService.user() === undefined) {
             <li routerLink="login"><a mat-button>Login</a></li>
             <li routerLink="signup"><a mat-button>Signup</a></li>
-            <li><a mat-button>Logout</a></li>
-            <li><a mat-button>Home</a></li>
-            <li><a mat-button>Dashboard</a></li>
-            <li><a mat-button>About</a></li>
+            }
+            @if(authService.user()){
+            <li (click)="logout()"><a mat-button>Logout</a></li>
+            <li routerLink="home"><a mat-button>Home</a></li>
+            <li routerLink="dashboard"><a mat-button>Dashboard</a></li>
+            }
+            <li routerLink="about"><a mat-button>About</a></li>
         </ul>
     </mat-sidenav>
     <mat-sidenav-content>
         <mat-toolbar class="navbar">
-            <span>Robb's Todos</span>
+            <span routerLink="/home" class="title">Robb's Todos</span>
             <span class="example-spacer"></span>
             @if (!smallScreen()) {
             <ul class="links">
+                @if (authService.user() === undefined) {
                 <li routerLink="login"><a mat-button>Login</a></li>
                 <li routerLink="signup"><a mat-button>Signup</a></li>
-                <li><a mat-button>Logout</a></li>
-                <li><a mat-button>Home</a></li>
-                <li><a mat-button>Dashboard</a></li>
-                <li><a mat-button>About</a></li>
+                }
+                @if(authService.user()){
+                <li routerLink="home"><a mat-button>Home</a></li>
+                <li routerLink="dashboard"><a mat-button>Dashboard</a></li>
+                <li (click)="logout()"><a mat-button>Logout</a></li>
+                }
+                <li routerLink="about"><a mat-button>About</a></li>
             </ul>
             }
             @if (smallScreen()) {

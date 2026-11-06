@@ -1,0 +1,27 @@
+<div class="container">
+    @if (todo()) {
+    <h2>{{todo()?.title}}</h2>
+    <div class="todo-status">
+        <h4>Status: {{todo()?.status}}</h4>
+        <p><strong>Priority: {{todo()?.priority}}</strong></p>
+    </div>
+    <p><small>Created at {{todo()?.createdAt.toLocaleString()}}</small></p>
+    @if(todo()?.deadline){
+    <p>Deadline: {{todo()?.deadline?.toLocaleString()}}</p>
+    }
+    <p class="todo-content">{{todo()?.content}}</p>
+    @if(photos().length){
+    <div class="photos-container">
+        @for (photo of photos(); track $index) {
+        <img [src]="staticFilesUrl + '/' + photo.path" class="todo-image" [class.todo-image-small]="smallScreen()">
+        }
+    </div>
+    }
+    <div class="actions">
+        <button matButton="filled" (click)="markAsDone()" [disabled]="isDone()">Done</button>
+        <button matButton="filled" [routerLink]="['/todo', 'edit', todo()?.id]">Edit</button>
+        <button matButton="filled" (click)="deleteTodo()">Delete</button>
+    </div>
+    }
+
+</div>

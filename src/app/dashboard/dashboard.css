@@ -1,0 +1,12 @@
+.container {
+    width: 60%;
+    margin: 0 auto;
+}
+
+.container-small{
+    width: 95%;
+}
+
+.title{
+    text-align: center;
+}

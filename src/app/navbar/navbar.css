@@ -7,11 +7,16 @@
   list-style: none;
 }
 
-.sidenav-container{
+.sidenav-container {
   height: 100%;
 }
 
-.navbar{
+.navbar {
   position: sticky;
   top: 0;
+  z-index: 100;
+}
+
+.title:hover {
+  cursor: pointer;
 }

@@ -1,0 +1,25 @@
+textarea {
+    field-sizing: content;
+}
+
+.container {
+    width: 60%;
+    margin: 0 auto;
+}
+
+.form__h2 {
+    margin-bottom: 1rem;
+}
+
+.form-control {
+    width: 100%;
+}
+
+.date-control {
+    margin-right: 1rem;
+}
+
+.submit-container {
+    margin-top: 1rem;
+    text-align: center;
+}

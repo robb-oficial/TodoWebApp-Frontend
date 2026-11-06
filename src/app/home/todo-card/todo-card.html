@@ -1,0 +1,12 @@
+<mat-card class="card">
+    <mat-card-header>
+        <mat-card-title [routerLink]="'/todo/' + todo().id" class="card-title">{{todo().title}}</mat-card-title>
+        <mat-card-subtitle>Priority: {{todo().priority}}</mat-card-subtitle>
+    </mat-card-header>
+    <mat-card-actions>
+        <button matFab extended [disabled]="todo().status === 'done'" (click)="markTodoAsDone()">
+            <mat-icon>check_circle</mat-icon>
+            Done
+        </button>
+    </mat-card-actions>
+</mat-card>

@@ -1,0 +1,26 @@
+.greeting,
+.username {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+.todos-container {
+    width: 80%;
+    margin: 0 auto 2rem;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+}
+
+.todos-container-small {
+    width: 90%;
+    grid-template-columns: 1fr;
+}
+
+.center {
+    margin-bottom: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

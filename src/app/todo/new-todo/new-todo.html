@@ -1,0 +1,40 @@
+<div class="container">
+    <form [formGroup]="form" enctype="multipart/form-data" (ngSubmit)="submitForm()">
+        <h2 class="form__h2">Create a New Todo</h2>
+
+        <mat-form-field class="form-control">
+            <mat-label>Title</mat-label>
+            <input matInput type="text" placeholder="john123" formControlName="title">
+        </mat-form-field>
+        <mat-form-field class="form-control">
+            <mat-label>Content</mat-label>
+            <textarea matInput formControlName="content" placeholder="I need to..."></textarea>
+        </mat-form-field>
+        <mat-form-field>
+            <mat-label>Priority</mat-label>
+            <mat-select formControlName="priority">
+                <mat-option value="1">1</mat-option>
+                <mat-option value="2">2</mat-option>
+                <mat-option value="3">3</mat-option>
+            </mat-select>
+        </mat-form-field>
+        <h4>Deadline (optional)</h4>
+        <mat-form-field class="date-control">
+            <mat-label>Date</mat-label>
+            <input matInput [matDatepicker]="datepicker" formControlName="deadlineDate">
+            <mat-datepicker #datepicker />
+            <mat-datepicker-toggle [for]="datepicker" matSuffix />
+        </mat-form-field>
+        <mat-form-field>
+            <mat-label>Time</mat-label>
+            <input matInput [matTimepicker]="picker" formControlName="deadlineTime">
+            <mat-timepicker-toggle matIconSuffix [for]="picker" />
+            <mat-timepicker #picker />
+        </mat-form-field>
+        <h4>Photos</h4>
+        <input type="file" multiple #todoPhotos>
+        <div class="submit-container">
+            <button type="submit" matButton="filled">Create</button>
+        </div>
+    </form>
+</div>

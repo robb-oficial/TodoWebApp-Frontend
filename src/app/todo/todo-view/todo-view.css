@@ -1,0 +1,36 @@
+.container {
+    width: 90%;
+    max-width: 770px;
+    margin: 0 auto;
+}
+
+.todo-status {
+    display: flex;
+    justify-content: space-between;
+}
+
+.todo-content {
+    margin: 1.3rem 0;
+}
+
+.actions {
+    display: flex;
+    justify-content: space-around;
+    margin: 0 auto 1.3rem;
+    max-width: 490px;
+}
+
+.photos-container {
+    margin-bottom: 1.3rem;
+}
+
+.todo-image {
+    max-width: 50%;
+    display: inline-block;
+    margin-bottom: 0.5rem;
+}
+
+.todo-image-small {
+    max-width: 100%;
+    display: block;
+}

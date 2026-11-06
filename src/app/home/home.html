@@ -1,0 +1,19 @@
+<p class="greeting">Hello,</p>
+<p class="username">{{user?.username}}</p>
+
+<div class="center">
+    <button matButton="filled" routerLink="/todo/new">Create New Todo</button>
+</div>
+
+<div class="center">
+    <mat-checkbox (change)="hideOrShowDoneTodos($event)">Hide Done Todos</mat-checkbox>
+    <mat-checkbox (change)="orderByPriority($event)">Order By Priority</mat-checkbox>
+</div>
+
+<div class="todos-container" [class.todos-container-small]="smallScreen()">
+    @for (todo of todos(); track todo.id) {
+    <app-todo-card [todo]="todo" (doneClicked)="fetchTodos()"></app-todo-card>
+    }@empty {
+    <p>No todos yet</p>
+    }
+</div>
