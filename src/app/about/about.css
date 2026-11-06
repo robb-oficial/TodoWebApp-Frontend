@@ -1,0 +1,28 @@
+.container {
+    width: 60%;
+    margin: 0 auto;
+}
+
+.container-small {
+    width: 95%;
+}
+
+.title {
+    text-align: center;
+    margin-bottom: 1.5rem;
+}
+
+.subtitle,
+p {
+    margin-bottom: 1rem;
+}
+
+p,
+ul {
+    font-size: 1.2rem;
+}
+
+.technologies {
+    display: flex;
+    justify-content: space-around;
+}

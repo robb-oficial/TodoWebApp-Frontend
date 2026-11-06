@@ -1,1 +1,46 @@
-<p>about works!</p>
+<div class="container" [class.container-small]="smallScreen()">
+    <h1 class="title">About This Not-So-Special Todo App</h1>
+    <p>
+        I made this app to understand the basics of full-stack web programming, using my favorite modern technologies
+        and best practices although I'm pretty sure I failed at that, but I plan to keep improving this little project.
+        Also, I didn't use any AI to generate the code for this app, it helped me better understand the
+        ECharts library and misconceptions about JavaScript/TypeScript but I did not let it generate any code for me. It
+        was slow but I genuinely enjoyed learning and
+        solving every little challenge by myself.
+    </p>
+    <h2 class="subtitle">Technologies Used</h2>
+    <div class="technologies">
+        <section>
+            <h3>Frontend</h3>
+            <ul>
+                <li>TypeScript</li>
+                <li>Angular</li>
+                <li>Angular Material</li>
+                <li>Apache ECharts</li>
+                <li>ngx-echarts</li>
+            </ul>
+        </section>
+        <section>
+            <h3>Backend</h3>
+            <ul>
+                <li>Node.js</li>
+                <li>Express.js</li>
+                <li>jsonwebtoken</li>
+                <li>bcrypt</li>
+                <li>cors</li>
+                <li>multer</li>
+                <li>PostgreSQL</li>
+                <li>Postgres.js</li>
+            </ul>
+        </section>
+    </div>
+
+    <h2 class="subtitle">Things to Improve</h2>
+    <ul>
+        <li>Reduce the use of type <code>any</code> in the frontend codebase</li>
+        <li>Implement more basic security measures in the backend</li>
+        <li>Actually do unit testing</li>
+        <li>Name variables better</li>
+        <li>Improve error handling in the backend</li>
+    </ul>
+</div>
